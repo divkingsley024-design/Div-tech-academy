@@ -1,1 +1,157 @@
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DIV TECH Academy</title>
+<style>
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #080d19;
+  color: #ffffff;
+  line-height: 1.6;
+}
+header {
+  background: #101b30;
+  padding: 20px 7%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+.logo { font-size: 24px; font-weight: bold; }
+.logo span, h1 span { color: #2993ff; }
+nav { display: flex; gap: 16px; flex-wrap: wrap; }
+a { color: #d5dfed; text-decoration: none; }
+nav a:hover { color: #2993ff; }
+.hero {
+  padding: 85px 7%;
+  text-align: center;
+  background: radial-gradient(ellipse at top, #183968, #080d19 70%);
+}
+.hero small { color: #91c7ff; letter-spacing: 3px; }
+h1 { font-size: clamp(36px, 7vw, 60px); line-height: 1.15; }
+.hero p { color: #c0ccdd; max-width: 650px; margin: 20px auto; }
+.button {
+  display: inline-block;
+  background: #2589ff;
+  color: white;
+  padding: 12px 22px;
+  border-radius: 6px;
+  margin: 8px;
+}
+section { padding: 60px 7%; }
+.section-title { text-align: center; margin-bottom: 30px; }
+.section-title p, .card p, .about p { color: #b7c4d7; }
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+  gap: 20px;
+}
+.card {
+  background: #111d32;
+  border: 1px solid #293c59;
+  padding: 24px;
+  border-radius: 12px;
+}
+.card .symbol { font-size: 32px; }
+.card h3 { color: #8dc4ff; }
+.about { background: #0e1728; text-align: center; }
+.about p { max-width: 750px; margin: auto; }
+.certificate {
+  max-width: 750px;
+  margin: auto;
+  text-align: center;
+  padding: 30px;
+  border: 3px double #bdcbe0;
+  background: linear-gradient(135deg, #182941, #0a1120);
+}
+.certificate h3 { color: #d7e2f0; font-size: 28px; }
+footer {
+  padding: 25px;
+  text-align: center;
+  color: #aab8cc;
+  border-top: 1px solid #293c59;
+}
+</style>
+</head>
+<body>
+<header>
+  <div class="logo">DIV <span>TECH</span> ACADEMY</div>
+  <nav>
+    <a href="#home">Home</a>
+    <a href="#courses">Courses</a>
+    <a href="#about">About</a>
+    <a href="#certificates">Certificates</a>
+  </nav>
+</header>
+
+<main>
+<section class="hero" id="home">
+  <small>YOUR DIGITAL FUTURE STARTS HERE</small>
+  <h1>Learn Skills.<br><span>Create Your Future.</span></h1>
+  <p>Welcome to DIV TECH Academy. Explore digital creativity, learn practical skills and turn your ideas into projects.</p>
+  <a class="button" href="#courses">Explore Courses</a>
+</section>
+
+<section id="courses">
+  <div class="section-title">
+    <h2>Explore Our Courses</h2>
+    <p>Start learning valuable creative and digital skills.</p>
+  </div>
+  <div class="grid">
+    <article class="card">
+      <div class="symbol">🎨</div>
+      <h3>Graphic Design</h3>
+      <p>Learn to design logos, posters, banners, flyers and brands.</p>
+    </article>
+    <article class="card">
+      <div class="symbol">🎬</div>
+      <h3>Video Editing</h3>
+      <p>Learn to edit videos and create engaging digital content.</p>
+    </article>
+    <article class="card">
+      <div class="symbol">✨</div>
+      <h3>Animation</h3>
+      <p>Explore motion graphics and animated digital storytelling.</p>
+    </article>
+    <article class="card">
+      <div class="symbol">💻</div>
+      <h3>Web Design</h3>
+      <p>Learn how websites are designed and built with code.</p>
+    </article>
+  </div>
+</section>
+
+<section class="about" id="about">
+  <div class="section-title"><h2>About DIV TECH Academy</h2></div>
+  <p>Our goal is to help learners develop creative and technical skills in graphic design, video editing, animation and web design. Learn, practise and grow your digital confidence with us.</p>
+</section>
+
+<section id="certificates">
+  <div class="section-title">
+    <h2>Student Certificates</h2>
+    <p>A preview of our planned blue-and-silver certificate design.</p>
+  </div>
+  <div class="certificate">
+    <div class="logo">DIV <span>TECH</span> ACADEMY</div>
+    <h3>Certificate of Achievement</h3>
+    <p>This recognises the successful completion of a course by</p>
+    <h2>[Student Name]</h2>
+    <p>Course: [Course Name]</p>
+    <p>Date: [Completion Date]</p>
+    <p>Design preview only — certificates are not yet issued or verified by a system.</p>
+  </div>
+</section>
+</main>
+
+<footer>
+  <p>&copy; 2026 DIV TECH Academy. Learn. Create. Innovate.</p>
+</footer>
+</body>
+</html>
+
