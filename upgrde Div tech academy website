@@ -1,0 +1,607 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#080d19">
+  <meta name="description" content="Learn graphic design, video editing, animation and web design at DIV TECH Academy.">
+  <title>DIV TECH Academy | Learn. Create. Innovate.</title>
+
+  <style>
+    :root {
+      --bg: #080d19;
+      --panel: #111b2d;
+      --blue: #3185ff;
+      --silver: #cbd5e1;
+      --white: #f8fafc;
+      --muted: #a9b6ca;
+    }
+
+    * { box-sizing: border-box; scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background: var(--bg);
+      color: var(--white);
+      line-height: 1.6;
+    }
+
+    a { color: inherit; text-decoration: none; }
+
+    header {
+      background: #0b1221;
+      border-bottom: 1px solid #263650;
+      padding: 15px 6%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      flex-wrap: wrap;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+
+    .logo {
+      font-size: 25px;
+      font-weight: 900;
+      letter-spacing: 2px;
+    }
+
+    .logo span { color: var(--blue); }
+
+    nav { display: flex; flex-wrap: wrap; gap: 16px; }
+    nav a { color: var(--silver); font-size: 14px; }
+    nav a:hover { color: var(--blue); }
+
+    .hero {
+      min-height: 490px;
+      padding: 90px 7%;
+      display: flex;
+      align-items: center;
+      background:
+        radial-gradient(ellipse at 85% 20%, #183c70 0, transparent 40%),
+        linear-gradient(135deg, #080d19, #101c32);
+    }
+
+    .hero-content { max-width: 760px; }
+
+    .eyebrow {
+      color: #78b2ff;
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      font-size: 13px;
+      font-weight: bold;
+    }
+
+    h1 { font-size: clamp(38px, 7vw, 66px); line-height: 1.1; margin: 15px 0; }
+    h1 span, .blue { color: var(--blue); }
+    p { color: var(--muted); }
+
+    .actions { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 25px; }
+
+    .btn {
+      display: inline-block;
+      padding: 12px 20px;
+      border-radius: 7px;
+      border: 1px solid var(--blue);
+      background: var(--blue);
+      color: white;
+      font-weight: bold;
+      cursor: pointer;
+      font-size: 14px;
+    }
+
+    .btn.secondary { background: transparent; color: var(--silver); border-color: #64748b; }
+    .btn:hover { opacity: .85; }
+
+    section { padding: 65px 7%; }
+    .section-heading { text-align: center; margin-bottom: 32px; }
+    .section-heading h2 { font-size: 32px; margin-bottom: 5px; }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 18px;
+    }
+
+    .card {
+      background: var(--panel);
+      border: 1px solid #263650;
+      padding: 23px;
+      border-radius: 12px;
+    }
+
+    .card .symbol { font-size: 32px; }
+    .card h3 { margin-bottom: 6px; }
+    .card p { font-size: 14px; }
+
+    .alternate { background: #0d1525; }
+
+    .form-panel {
+      max-width: 650px;
+      margin: auto;
+      padding: 25px;
+      background: var(--panel);
+      border: 1px solid #263650;
+      border-radius: 12px;
+    }
+
+    label { display: block; margin: 14px 0 6px; color: var(--silver); }
+
+    input, select, textarea {
+      width: 100%;
+      padding: 12px;
+      border-radius: 6px;
+      border: 1px solid #41516b;
+      background: #080d19;
+      color: white;
+      font: inherit;
+    }
+
+    input:focus, select:focus, textarea:focus {
+      outline: 2px solid var(--blue);
+    }
+
+    .form-panel .btn { margin-top: 18px; }
+
+    .certificate {
+      background: #f7f9fc;
+      color: #13233b;
+      border: 9px double #9aaec8;
+      outline: 2px solid #2675d8;
+      outline-offset: -17px;
+      padding: 38px 25px;
+      text-align: center;
+      max-width: 850px;
+      margin: 30px auto;
+      display: none;
+    }
+
+    .certificate .cert-logo {
+      font-size: 26px;
+      font-weight: 900;
+      letter-spacing: 3px;
+      color: #10213b;
+    }
+
+    .certificate .cert-logo span { color: #2675d8; }
+    .certificate h2 { font-size: clamp(25px, 5vw, 42px); margin: 8px 0; }
+    .certificate .student-name {
+      font-family: Georgia, serif;
+      font-size: clamp(25px, 5vw, 38px);
+      color: #175bb0;
+      border-bottom: 1px solid #aab9cc;
+      display: inline-block;
+      padding: 0 18px 7px;
+      overflow-wrap: anywhere;
+    }
+
+    .certificate p { color: #3b4c63; }
+    .cert-number { font-size: 12px; color: #53657c; }
+
+    .cert-actions { display: none; text-align: center; margin: 15px auto; }
+    footer { text-align: center; padding: 28px 6%; border-top: 1px solid #263650; }
+    footer p { font-size: 13px; }
+
+    @media (max-width: 600px) {
+      header { justify-content: center; }
+      nav { justify-content: center; gap: 12px; }
+      .hero { padding: 65px 6%; }
+      section { padding: 48px 6%; }
+    }
+
+    @media print {
+      body { background: white !important; }
+      body * { visibility: hidden !important; }
+      #certificate, #certificate * { visibility: visible !important; }
+      #certificate {
+        display: block !important;
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        max-width: none;
+        margin: 0;
+        padding: 45px 25px;
+        border: 9px double #9aaec8;
+        outline: 2px solid #2675d8;
+        outline-offset: -17px;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+      }
+      @page { size: landscape; margin: 10mm; }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <a class="logo" href="#home">DIV <span>TECH</span></a>
+    <nav aria-label="Main navigation">
+      <a href="#home">Home</a>
+      <a href="#courses">Courses</a>
+      <a href="#enrol">Enrol</a>
+      <a href="#certificate-maker">Certificates</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="hero-content">
+        <div class="eyebrow">Welcome to DIV TECH Academy</div>
+        <h1>Learn Skills.<br>Create the <span>Future.</span></h1>
+        <p>
+          Discover your creativity and develop digital skills in graphic design,
+          video editing, animation and web design.
+        </p>
+        <div class="actions">
+          <a class="btn" href="#courses">Explore Courses</a>
+          <a class="btn secondary" href="#enrol">Enrol Today</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="courses">
+      <div class="section-heading">
+        <div class="eyebrow">Build your skills</div>
+        <h2>Our <span class="blue">Courses</span></h2>
+        <p>Start learning creative and digital skills step by step.</p>
+      </div>
+
+      <div class="grid">
+        <article class="card">
+          <div class="symbol">🎨</div>
+          <h3>Graphic Design</h3>
+          <p>Learn to create logos, flyers, posters, banners and brand designs.</p>
+        </article>
+        <article class="card">
+          <div class="symbol">🎬</div>
+          <h3>Video Editing</h3>
+          <p>Learn video storytelling, editing techniques, transitions and titles.</p>
+        </article>
+        <article class="card">
+          <div class="symbol">✨</div>
+          <h3>Animation</h3>
+          <p>Explore motion graphics, animated text and creative visual storytelling.</p>
+        </article>
+        <article class="card">
+          <div class="symbol">💻</div>
+          <h3>Web Design</h3>
+          <p>Learn HTML, CSS and the basics of building your own website.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="alternate" id="enrol">
+      <div class="section-heading">
+        <div class="eyebrow">Take the next step</div>
+        <h2>Student <span class="blue">Enrolment</span></h2>
+        <p>Complete the form to prepare an enrolment email.</p>
+      </div>
+
+      <form class="form-panel" id="enrolForm">
+        <label for="student">Student's full name</label>
+        <input id="student" name="student" required maxlength="100"
+          placeholder="Enter your full name">
+
+        <label for="email">Student's email address</label>
+        <input id="email" name="email" type="email" required
+          placeholder="you@example.com">
+
+        <label for="course">Choose a course</label>
+        <select id="course" name="course" required>
+          <option value="">Select a course</option>
+          <option>Graphic Design</option>
+          <option>Video Editing</option>
+          <option>Animation</option>
+          <option>Web Design</option>
+        </select>
+
+        <button class="btn" type="submit">Prepare Enrolment Email</button>
+        <p>
+          Your email app will open with the details filled in.
+          Nothing is stored on this website.
+        </p>
+      </form>
+    </section>
+
+    <section id="certificate-maker">
+      <div class="section-heading">
+        <div class="eyebrow">Celebrate achievement</div>
+        <h2>Certificate <span class="blue">Generator</span></h2>
+        <p>Enter the student's details to create a printable certificate.</p>
+      </div>
+
+      <form class="form-panel" id="certificateForm">
+        <label for="certStudent">Student's full name</label>
+        <input id="certStudent" required maxlength="100"
+          placeholder="Enter student's name">
+
+        <label for="certCourse">Course completed</label>
+        <select id="certCourse" required>
+          <option value="">Choose completed course</option>
+          <option>Graphic Design</option>
+          <option>Video Editing</option>
+          <option>Animation</option>
+          <option>Web Design</option>
+        </select>
+
+        <label for="certDate">Date awarded</label>
+        <input id="certDate" type="date" required>
+
+        <button class="btn" type="submit">Create Certificate</button>
+      </form>
+
+      <div class="certificate" id="certificate">
+        <div class="cert-logo">DIV <span>TECH</span></div>
+        <p><strong>DIV TECH ACADEMY</strong></p>
+        <h2>CERTIFICATE OF COMPLETION</h2>
+        <p>This certificate is proudly presented to</p>
+        <div class="student-name" id="displayName"></div>
+        <p>For completing the course in</p>
+        <h3 class="blue" id="displayCourse"></h3>
+        <p>
+          In recognition of the time and effort devoted to learning
+          and completing this course.
+        </p>
+        <p id="displayDate"></p>
+        <p class="cert-number" id="displayNumber"></p>
+        <p><strong>DIV TECH Academy</strong></p>
+      </div>
+
+      <div class="cert-actions" id="certActions">
+        <button class="btn" type="button" onclick="window.print()">
+          Print or Save as PDF
+        </button>
+      </div>
+    </section>
+
+    <section class="alternate" id="contact">
+      <div class="section-heading">
+        <div class="eyebrow">Get in touch</div>
+        <h2>Contact <span class="blue">DIV TECH</span></h2>
+        <p>Have questions about our courses? Send us a message.</p>
+      </div>
+
+      <div class="form-panel">
+        <p><strong>DIV TECH Academy</strong></p>
+        <p>Creative skills. Digital knowledge. A brighter future.</p>
+        <p>
+          To contact the academy, use your email app and send a message
+          to the academy's email address once it has been configured.
+        </p>
+        <a class="btn" href="#enrol">Ask About Enrolment</a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="logo">DIV <span>TECH</span></div>
+    <p>© <span id="year"></span> DIV TECH Academy. All rights reserved.</p>
+    <p>Learn. Create. Innovate.</p>
+  </footer>
+
+  <script>
+    // Replace this with the academy's real email address.
+    const academyEmail = "YOUR_EMAIL@example.com";
+
+    document.getElementById("year").textContent =
+      new Date().getFullYear();
+
+    document.getElementById("enrolForm").addEventListener("submit", function(event) {
+      event.preventDefault();
+
+      if (academyEmail === "YOUR_EMAIL@example.com") {
+        alert("The enrolment form needs the academy's real email address. Ask the website owner to configure it first.");
+        return;
+      }
+
+      const name = document.getElementById("student").value.trim();
+      const email = document.getElementById("email").value.trim();
+      const course = document.getElementById("course").value;
+
+      const subject = encodeURIComponent("DIV TECH Academy Enrolment");
+      const body = encodeURIComponent(
+        "Student name: " + name +
+        "\nStudent email: " + email +
+        "\nCourse: " + course
+      );
+
+      window.location.href =
+        "mailto:" + academyEmail + "?subject=" + subject + "&body=" + body;
+    });
+
+    document.getElementById("certificateForm").addEventListener("submit", function(event) {
+      event.preventDefault();
+
+      const name = document.getElementById("certStudent").value.trim();
+      const course = document.getElementById("certCourse").value;
+      const dateValue = document.getElementById("certDate").value;
+
+      if (!name || !course || !dateValue) return;
+
+      document.getElementById("displayName").textContent = name;
+      document.getElementById("displayCourse").textContent = course;
+
+      const date = new Date(dateValue + "T12:00:00");
+      document.getElementById("displayDate").textContent =
+        "Awarded on " + date.toLocaleDateString("en-GB", {
+          day: "numeric", month: "long", year: "numeric"
+        });
+
+      // This is a display reference, not a secure verification number.
+      document.getElementById("displayNumber").textContent =
+        "Certificate reference: DTA-" +
+        dateValue.replaceAll("-", "") + "-" +
+        String(name.length).padStart(2, "0");
+
+      document.getElementById("certificate").style.display = "block";
+      document.getElementById("certActions").style.display = "block";
+      document.getElementById("certificate").scrollIntoView({
+        behavior: "smooth", block: "center"
+      });
+    });
+  </script>
+</body>
+</html>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DIV TECH Academy</title>
+<style>
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #080d19;
+  color: #ffffff;
+  line-height: 1.6;
+}
+header {
+  background: #101b30;
+  padding: 20px 7%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+.logo { font-size: 24px; font-weight: bold; }
+.logo span, h1 span { color: #2993ff; }
+nav { display: flex; gap: 16px; flex-wrap: wrap; }
+a { color: #d5dfed; text-decoration: none; }
+nav a:hover { color: #2993ff; }
+.hero {
+  padding: 85px 7%;
+  text-align: center;
+  background: radial-gradient(ellipse at top, #183968, #080d19 70%);
+}
+.hero small { color: #91c7ff; letter-spacing: 3px; }
+h1 { font-size: clamp(36px, 7vw, 60px); line-height: 1.15; }
+.hero p { color: #c0ccdd; max-width: 650px; margin: 20px auto; }
+.button {
+  display: inline-block;
+  background: #2589ff;
+  color: white;
+  padding: 12px 22px;
+  border-radius: 6px;
+  margin: 8px;
+}
+section { padding: 60px 7%; }
+.section-title { text-align: center; margin-bottom: 30px; }
+.section-title p, .card p, .about p { color: #b7c4d7; }
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+  gap: 20px;
+}
+.card {
+  background: #111d32;
+  border: 1px solid #293c59;
+  padding: 24px;
+  border-radius: 12px;
+}
+.card .symbol { font-size: 32px; }
+.card h3 { color: #8dc4ff; }
+.about { background: #0e1728; text-align: center; }
+.about p { max-width: 750px; margin: auto; }
+.certificate {
+  max-width: 750px;
+  margin: auto;
+  text-align: center;
+  padding: 30px;
+  border: 3px double #bdcbe0;
+  background: linear-gradient(135deg, #182941, #0a1120);
+}
+.certificate h3 { color: #d7e2f0; font-size: 28px; }
+footer {
+  padding: 25px;
+  text-align: center;
+  color: #aab8cc;
+  border-top: 1px solid #293c59;
+}
+</style>
+</head>
+<body>
+<header>
+  <div class="logo">DIV <span>TECH</span> ACADEMY</div>
+  <nav>
+    <a href="#home">Home</a>
+    <a href="#courses">Courses</a>
+    <a href="#about">About</a>
+    <a href="#certificates">Certificates</a>
+  </nav>
+</header>
+
+<main>
+<section class="hero" id="home">
+  <small>YOUR DIGITAL FUTURE STARTS HERE</small>
+  <h1>Learn Skills.<br><span>Create Your Future.</span></h1>
+  <p>Welcome to DIV TECH Academy. Explore digital creativity, learn practical skills and turn your ideas into projects.</p>
+  <a class="button" href="#courses">Explore Courses</a>
+</section>
+
+<section id="courses">
+  <div class="section-title">
+    <h2>Explore Our Courses</h2>
+    <p>Start learning valuable creative and digital skills.</p>
+  </div>
+  <div class="grid">
+    <article class="card">
+      <div class="symbol">🎨</div>
+      <h3>Graphic Design</h3>
+      <p>Learn to design logos, posters, banners, flyers and brands.</p>
+    </article>
+    <article class="card">
+      <div class="symbol">🎬</div>
+      <h3>Video Editing</h3>
+      <p>Learn to edit videos and create engaging digital content.</p>
+    </article>
+    <article class="card">
+      <div class="symbol">✨</div>
+      <h3>Animation</h3>
+      <p>Explore motion graphics and animated digital storytelling.</p>
+    </article>
+    <article class="card">
+      <div class="symbol">💻</div>
+      <h3>Web Design</h3>
+      <p>Learn how websites are designed and built with code.</p>
+    </article>
+  </div>
+</section>
+
+<section class="about" id="about">
+  <div class="section-title"><h2>About DIV TECH Academy</h2></div>
+  <p>Our goal is to help learners develop creative and technical skills in graphic design, video editing, animation and web design. Learn, practise and grow your digital confidence with us.</p>
+</section>
+
+<section id="certificates">
+  <div class="section-title">
+    <h2>Student Certificates</h2>
+    <p>A preview of our planned blue-and-silver certificate design.</p>
+  </div>
+  <div class="certificate">
+    <div class="logo">DIV <span>TECH</span> ACADEMY</div>
+    <h3>Certificate of Achievement</h3>
+    <p>This recognises the successful completion of a course by</p>
+    <h2>[Student Name]</h2>
+    <p>Course: [Course Name]</p>
+    <p>Date: [Completion Date]</p>
+    <p>Design preview only — certificates are not yet issued or verified by a system.</p>
+  </div>
+</section>
+</main>
+
+<footer>
+  <p>&copy; 2026 DIV TECH Academy. Learn. Create. Innovate.</p>
+</footer>
+</body>
+</html>
+
